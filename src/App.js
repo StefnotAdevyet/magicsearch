@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-const App = () => {
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      cardData: []
+    }
+  }
+
+  render() {
+
   return (
-  <div>hello world</div>
-  );
+    <div>{this.state.cardData}</div>
+    );
+
+  }
+
 };
 
-export default App;
+
+  export default App;
