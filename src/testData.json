@@ -1,0 +1,79 @@
+{
+  "card": {
+    "name": "Ankh of Mishra",
+    "manaCost": "{2}",
+    "cmc": 2.0,
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "rarity": "Rare",
+    "set": "LEA",
+    "setName": "Limited Edition Alpha",
+    "text": "Whenever a land enters the battlefield, Ankh of Mishra deals 2 damage to that land's controller.",
+    "artist": "Amy Weber",
+    "number": "230",
+    "layout": "normal",
+    "multiverseid": "1",
+    "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1&type=card",
+    "rulings": [
+      {
+        "date": "2004-10-04",
+        "text": "This triggers on any land entering the battlefield. This includes playing a land or putting a land onto the battlefield using a spell or ability."
+      },
+      {
+        "date": "2004-10-04",
+        "text": "It determines the land’s controller at the time the ability resolves. If the land leaves the battlefield before the ability resolves, the land’s last controller before it left is used."
+      }
+    ],
+    "printings": [
+      "2ED",
+      "3ED",
+      "4BB",
+      "4ED",
+      "5ED",
+      "6ED",
+      "CED",
+      "CEI",
+      "FBB",
+      "LEA",
+      "LEB",
+      "ME1",
+      "SUM",
+      "VMA"
+    ],
+    "originalText": "Ankh does 2 damage to anyone who puts a new land into play.",
+    "originalType": "Continuous Artifact",
+    "legalities": [
+      {
+        "format": "Commander",
+        "legality": "Legal"
+      },
+      {
+        "format": "Duel",
+        "legality": "Legal"
+      },
+      {
+        "format": "Legacy",
+        "legality": "Legal"
+      },
+      {
+        "format": "Oldschool",
+        "legality": "Legal"
+      },
+      {
+        "format": "Penny",
+        "legality": "Legal"
+      },
+      {
+        "format": "Premodern",
+        "legality": "Legal"
+      },
+      {
+        "format": "Vintage",
+        "legality": "Legal"
+      }
+    ],
+    "id": "33b9ca30-0296-52b7-a8e2-7d4715404b0d"
+  }
+}
