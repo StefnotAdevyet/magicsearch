@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import endpoint from './config'
+import CardProfile from './cardProfile'
 /*
 need to add the api call response to the component so it renders
 the first item in the response data when the app start up
@@ -17,7 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    fetch('https://api.magicthegathering.io/v1/cards/1')
+    fetch('https://api.magicthegathering.io/v1/cards/764')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -37,7 +38,7 @@ class App extends React.Component {
         )
     } else {
       return (
-        <div>{cardData.card.name}</div>
+        <CardProfile cardData={this.state.cardData.card} />
       );
     }
   }
