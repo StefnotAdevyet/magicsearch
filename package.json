@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/StefnotAdevyet/magicsearch#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "babel": "^6.23.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.5",
