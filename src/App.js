@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    fetch('https://api.magicthegathering.io/v1/cards/764')
+    fetch('https://api.magicthegathering.io/v1/cards')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -31,14 +31,19 @@ class App extends React.Component {
   render() {
 
     var { cardData, isLoaded } = this.state;
+    var listOfCards = this.state.cardData.cards
+/*Console log for testing below */
+    console.log(this.state.cardData.cards)
 
     if (!isLoaded) {
       return (
         <div>Loading...</div>
-        )
+      )
     } else {
       return (
-        <CardProfile cardData={this.state.cardData.card} />
+        listOfCards.map(index => {
+          return <CardProfile cardData={index} />
+        })
       );
     }
   }

@@ -4,7 +4,9 @@ class CardProfile extends React.Component {
 
 
   render () {
-    console.log(this.props.cardData)
+    /*Console log for testing below */
+    console.log(this.props.cardData);
+
     var card = this.props.cardData;
     return (
     <div>
