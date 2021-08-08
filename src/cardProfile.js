@@ -1,20 +1,35 @@
 import React, { component } from 'react'
 
 class CardProfile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: this.props.cardData.name,
+      colorIdentity: this.props.cardData.colorIdentity,
+      manaCost: this.props.cardData.cmc,
+      image: this.props.cardData.imageUrl,
+      text: this.props.cardData.text
+    }
+  }
+
+
+
 
 
   render () {
     /*Console log for testing below */
-    console.log(this.props.cardData);
+    var color = this.state.colorIdentity;
+    console.log('this props: ', this.props.cardData);
+
 
     var card = this.props.cardData;
     return (
     <div>
-      <h1>{card.name}</h1>
-      <div>{card.colorIdentity || 'colorless'}</div>
-      <div>{card.cmc}</div>
-      <img src={card.imageUrl}/>
-      <div>{card.text}</div>
+      <h1>{this.state.name}</h1>
+      <div>{color}</div>
+      <div>{this.state.manaCost}</div>
+      <img src={this.state.image}/>
+      <div>{this.state.text}</div>
 
     </div>
     )
