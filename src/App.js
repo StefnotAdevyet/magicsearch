@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import endpoint from './config'
-import CardProfile from './cardProfile'
+import endpoint from './config';
+import CardProfile from './cardProfile';
+import Search from './Search';
+import View from './View'
+
+import './App.css'
 /*
 need to add the api call response to the component so it renders
 the first item in the response data when the app start up
@@ -33,7 +37,7 @@ class App extends React.Component {
     var { cardData, isLoaded } = this.state;
     var listOfCards = this.state.cardData.cards
 /*Console log for testing below */
-    console.log(this.state.cardData.cards)
+    //console.log('list of cards: ', listOfCards)
 
     if (!isLoaded) {
       return (
@@ -41,9 +45,11 @@ class App extends React.Component {
       )
     } else {
       return (
-        listOfCards.map(index => {
-          return <CardProfile cardData={index} />
-        })
+
+        <>
+        <Search />
+        <View cards={listOfCards}/>
+        </>
       );
     }
   }

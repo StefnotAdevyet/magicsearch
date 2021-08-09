@@ -4,11 +4,11 @@ class CardProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: this.props.cardData.name,
-      colorIdentity: this.props.cardData.colorIdentity,
-      manaCost: this.props.cardData.cmc,
-      image: this.props.cardData.imageUrl,
-      text: this.props.cardData.text
+      name: this.props.card.name,
+      colorIdentity: this.props.card.colorIdentity,
+      manaCost: this.props.card.cmc,
+      image: this.props.card.imageUrl,
+      text: this.props.card.text
     }
   }
 
@@ -18,11 +18,11 @@ class CardProfile extends React.Component {
 
   render () {
     /*Console log for testing below */
+   // console.log('this props: ', this.props);
     var color = this.state.colorIdentity;
-    console.log('this props: ', this.props.cardData);
 
 
-    var card = this.props.cardData;
+
     return (
     <div>
       <h1>{this.state.name}</h1>
@@ -30,7 +30,6 @@ class CardProfile extends React.Component {
       <div>{this.state.manaCost}</div>
       <img src={this.state.image}/>
       <div>{this.state.text}</div>
-
     </div>
     )
   }
