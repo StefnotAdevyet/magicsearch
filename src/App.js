@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    fetch('https://api.magicthegathering.io/v1/cards')
+    fetch(endpoint)
     .then(res => res.json())
     .then(json => {
       this.setState({
