@@ -24,13 +24,13 @@ class CardProfile extends React.Component {
 
 
     return (
-    <div>
+    <li>
       <h1>{this.state.name}</h1>
       <div>{color}</div>
       <div>{this.state.manaCost}</div>
       <img src={this.state.image}/>
       <div>{this.state.text}</div>
-    </div>
+    </li>
     )
   }
 }
