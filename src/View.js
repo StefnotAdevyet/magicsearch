@@ -11,7 +11,7 @@ class View extends React.Component {
 
 
   render() {
-   // console.log(this.props.cards, this.state)
+    console.log(this.props.cards, this.state.data)
     var cards = this.state.data.cards
     return (
       <ul>
