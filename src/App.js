@@ -50,12 +50,15 @@ function App () {
         <div>Loading...</div>
       )
     } else if (isLoaded) {
+      console.log(cards)
+      const cards = cardData.cards
 
       return (
+
        <div>
 
         <Search />
-        <View cards={cardData}/>
+
 
 
 
