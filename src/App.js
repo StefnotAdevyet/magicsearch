@@ -25,40 +25,24 @@ function App () {
 
   useEffect(() => {
     setIsLoaded(false)
-    axios.get(endpoint).then(res => {
+    axios.get(endpoint).then( res => {
       setIsLoaded(true)
-      setCardData(res.data.cards)
+      setCardData(res.data.cards.map(c => c.name))
     })
 
   }, []);
 
 
-/*Console log for testing below */
-    console.log('list of cards: ', cardData)
-    if (error) {
-      return <div>Error: {error.message}</div>
-    }
-    if (!isLoaded) {
-      return (
-        <div>Loading...</div>
-      )
-    } else if (isLoaded) {
-      console.log(cards)
-      const cards = cardData.cards
-
-      return (
-
-       <div>
-
-        <Search />
 
 
+  return (
+    <>
+    <View cardData={cardData} />
+    </>
+  )
 
 
-        </div>
-      );
-    }
-  };
+};
 
 
 

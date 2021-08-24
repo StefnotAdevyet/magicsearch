@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import CardProfile from './cardProfile';
 
-function View (props) {
+function View ({cardData}) {
+
+  console.log('props from view: ', cardData)
+
+  return (
+    cardData.map(c => <div>{c}</div>)
+  )
 
 
-
-
-    console.log('cards: ', props.cards)
-    var cards = props
-    return (
-      <ul>
-        {cards.map((card) => (
-          <CardProfile card={card} />
-        )), []}
-      </ul>
-          )
-  }
+}
 
 
 
