@@ -1,8 +1,9 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import endpoint from './config';
 import CardProfile from './cardProfile';
 import Search from './Search';
 import View from './View'
+import axios from 'axios';
 
 
 
@@ -23,22 +24,14 @@ function App () {
 
 
   useEffect(() => {
-    fetch(endpoint)
-    .then(res => res.json())
-    .then(json => {
+    setIsLoaded(false)
+    axios.get(endpoint).then(res => {
+      setIsLoaded(true)
+      setCardData(res.data.cards)
+    })
 
-        setIsLoaded(true)
-        setCardData(json)
-      },
-      (error) => {
-        setIsLoaded(true);
-        setError(error);
-      })
-    }, []);
+  }, []);
 
-
-
-   // var { cardData, isLoaded } = this.state;
 
 /*Console log for testing below */
     console.log('list of cards: ', cardData)
