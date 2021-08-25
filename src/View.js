@@ -7,7 +7,9 @@ function View ({cardData}) {
 
   return (
     //need to fix key props
-    cardData.map(c => <div>{c}</div>)
+    <>
+    <div>test</div>
+      </>
   )
 
 

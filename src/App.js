@@ -22,6 +22,7 @@ function App () {
   const [isLoaded, setIsLoaded] = useState(false);
   const [cardData, setCardData] = useState([]);
   const [currentPage, setCurrentPage] = useState(endpoint);
+  const [pageIndex, setPageIndex] = useState(1)
   const [nextPage, setNextPage] = useState();
   const [previousPage, setPreviousPage] = useState();
 
@@ -33,8 +34,8 @@ function App () {
       setNextPage(res.headers.link.split(' ')[2].toString().replaceAll(">", "").replaceAll("<", ""))
       setPreviousPage(res.headers.link.split(' ')[0].toString().replaceAll(">", "").replaceAll("<", ""))
       setIsLoaded(true)
-      setCardData(res.data.cards.map(c => c.name))
-      console.log('response header: ', res.headers.link.split(' '))
+      setCardData(res.data.cards.map(c => c))
+      console.log('response header: ', res)
     })
 
   }, [currentPage]);
@@ -51,9 +52,10 @@ function App () {
 
   return (
     <>
-    <View cardData={cardData} />
+    <View id="view" cardData={cardData} />
     <Paginate goToNextPage={goToNextPage}
-              goToPreviousPage={goToPreviousPage}/>
+              goToPreviousPage={goToPreviousPage}
+              pageIndex={pageIndex}/>
     </>
   )
 
