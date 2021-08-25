@@ -30,20 +30,30 @@ function App () {
   useEffect(() => {
     setIsLoaded(false)
     axios.get(currentPage).then( res => {
+      setNextPage(res.headers.link.split(' ')[2].toString().replaceAll(">", "").replaceAll("<", ""))
+      setPreviousPage(res.headers.link.split(' ')[0].toString().replaceAll(">", "").replaceAll("<", ""))
       setIsLoaded(true)
       setCardData(res.data.cards.map(c => c.name))
-      console.log('response header: ', res)
+      console.log('response header: ', res.headers.link.split(' '))
     })
 
-  }, []);
+  }, [currentPage]);
 
+  function goToNextPage () {
+    setCurrentPage(nextPage);
+  }
+
+  function goToPreviousPage () {
+    setCurrentPage(previousPage)
+  }
 
 
 
   return (
     <>
     <View cardData={cardData} />
-    <Paginate />
+    <Paginate goToNextPage={goToNextPage}
+              goToPreviousPage={goToPreviousPage}/>
     </>
   )
 

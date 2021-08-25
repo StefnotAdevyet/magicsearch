@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Paginate () {
+function Paginate ({ goToPreviousPage, goToNextPage }) {
 
 
   return (
     <>
-    <button>prev</button>
+    <button onClick={goToPreviousPage}>prev</button>
 
-    <button>next</button>
+    <button onClick={goToNextPage}>next</button>
     </>
   )
 }
