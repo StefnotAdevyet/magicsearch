@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import endpoint from './config';
 import CardProfile from './cardProfile';
 import Search from './Search';
+import Paginate from './Paginate'
 import View from './View'
 import axios from 'axios';
 
@@ -20,14 +21,18 @@ function App () {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [cardData, setCardData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(endpoint);
+  const [nextPage, setNextPage] = useState();
+  const [previousPage, setPreviousPage] = useState();
 
 
 
   useEffect(() => {
     setIsLoaded(false)
-    axios.get(endpoint).then( res => {
+    axios.get(currentPage).then( res => {
       setIsLoaded(true)
       setCardData(res.data.cards.map(c => c.name))
+      console.log('response header: ', res)
     })
 
   }, []);
@@ -38,6 +43,7 @@ function App () {
   return (
     <>
     <View cardData={cardData} />
+    <Paginate />
     </>
   )
 

@@ -6,6 +6,7 @@ function View ({cardData}) {
   console.log('props from view: ', cardData)
 
   return (
+    //need to fix key props
     cardData.map(c => <div>{c}</div>)
   )
 
