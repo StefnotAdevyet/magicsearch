@@ -26,7 +26,7 @@ function App () {
   const [pageIndex, setPageIndex] = useState(1)
   const [nextPage, setNextPage] = useState();
   const [previousPage, setPreviousPage] = useState();
-  const [searchTerm, setSearchTerm] = useState()
+  const [searchTerm, setSearchTerm] = useState('')
 
 
 
@@ -54,13 +54,18 @@ function App () {
   return (
     <>
       <div className="search">
-        <input></input>
+        <input type="text"
+               placeholder="Search..."
+               onChange={(e) => {
+                 setSearchTerm(e.target.value);
+               }}
+               />
       </div>
-      <View id="view" cardData={cardData} />
+      <View id="view" searchTerm={searchTerm}cardData={cardData} />
 
-    <Paginate goToNextPage={goToNextPage}
-              goToPreviousPage={goToPreviousPage}
-              pageIndex={pageIndex}/>
+      <Paginate goToNextPage={goToNextPage}
+        goToPreviousPage={goToPreviousPage}
+        pageIndex={pageIndex} />
     </>
   )
 
