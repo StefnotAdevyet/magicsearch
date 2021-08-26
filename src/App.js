@@ -5,6 +5,7 @@ import Search from './Search';
 import Paginate from './Paginate'
 import View from './View'
 import axios from 'axios';
+import './App.css';
 
 
 
@@ -25,6 +26,7 @@ function App () {
   const [pageIndex, setPageIndex] = useState(1)
   const [nextPage, setNextPage] = useState();
   const [previousPage, setPreviousPage] = useState();
+  const [searchTerm, setSearchTerm] = useState()
 
 
 
@@ -51,7 +53,9 @@ function App () {
 
   return (
     <>
-
+      <div className="search">
+        <input></input>
+      </div>
       <View id="view" cardData={cardData} />
 
     <Paginate goToNextPage={goToNextPage}
