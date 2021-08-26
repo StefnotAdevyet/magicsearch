@@ -35,7 +35,6 @@ function App () {
       setPreviousPage(res.headers.link.split(' ')[0].toString().replaceAll(">", "").replaceAll("<", ""))
       setIsLoaded(true)
       setCardData(res.data.cards.map(c => c))
-      console.log('response header: ', res)
     })
 
   }, [currentPage]);
@@ -45,14 +44,16 @@ function App () {
   }
 
   function goToPreviousPage () {
-    setCurrentPage(previousPage)
+    setCurrentPage(previousPage);
   }
 
 
 
   return (
     <>
-    <View id="view" cardData={cardData} />
+
+      <View id="view" cardData={cardData} />
+
     <Paginate goToNextPage={goToNextPage}
               goToPreviousPage={goToPreviousPage}
               pageIndex={pageIndex}/>

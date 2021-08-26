@@ -8,8 +8,8 @@ function View ({cardData}) {
   return (
     //need to fix key props
     <>
-    <div>test</div>
-      </>
+      <ul>{cardData.map(c => <CardProfile key={c} card={c}/>)}</ul>
+    </>
   )
 
 
