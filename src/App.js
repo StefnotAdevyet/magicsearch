@@ -52,7 +52,7 @@ function App () {
 
 
   return (
-    <>
+    <div className="app">
       <div className="search">
         <input type="text"
                placeholder="Search..."
@@ -61,12 +61,16 @@ function App () {
                }}
                />
       </div>
-      <View id="view" searchTerm={searchTerm}cardData={cardData} />
+      <div className="view">
+      <View searchTerm={searchTerm}cardData={cardData} />
+      </div>
+      <div className="paginate" >
 
       <Paginate goToNextPage={goToNextPage}
         goToPreviousPage={goToPreviousPage}
         pageIndex={pageIndex} />
-    </>
+      </div>
+    </div>
   )
 
 

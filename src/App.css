@@ -5,3 +5,19 @@
 h1 {
     font-size: 14px;
 }
+
+.view {
+
+    margin-top: 60px;
+    overflow-y: auto;
+}
+.app {
+    height: 200px;
+    padding-bottom: 20px;
+}
+
+.paginate {
+    margin-top: 40px;
+    position: fixed;
+    top: 0
+}

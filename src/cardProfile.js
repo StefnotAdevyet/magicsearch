@@ -10,6 +10,7 @@ const card = props.card;
     <li>
     <h1 id="name">{card.name}</h1>
     <img className="cardImg"src={card.imageUrl} />
+    <div>{card.text}</div>
     </li>
     )
 }
