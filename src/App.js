@@ -31,18 +31,19 @@ function App () {
 
 
   useEffect(() => {
-    setIsLoaded(false)
-    axios.get(currentPage).then( res => {
-      setNextPage(res.headers.link.split(' ')[2].toString().replaceAll(">", "").replaceAll("<", ""))
-      setPreviousPage(res.headers.link.split(' ')[0].toString().replaceAll(">", "").replaceAll("<", ""))
-      setIsLoaded(true)
-      setCardData(res.data.cards.map(c => c))
-    })
+   const fetchCards = async () => {
+     setIsLoaded(true);
+     const res = await axios.get(currentPage);
+     setCardData(res.data.cards);
+     setIsLoaded(false);
+    }
 
-  }, [currentPage]);
+    fetchCards();
+  }, []);
 
   function goToNextPage () {
     setCurrentPage(nextPage);
+    console.log(nextPage)
   }
 
   function goToPreviousPage () {

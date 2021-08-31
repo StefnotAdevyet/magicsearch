@@ -3,7 +3,7 @@ import CardProfile from './cardProfile';
 
 function View ({cardData, searchTerm}) {
 
-  console.log('props from view: ', cardData)
+ // console.log('props from view: ', cardData)
 
   return (
     //need to fix key props

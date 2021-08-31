@@ -17,6 +17,7 @@ h1 {
 }
 
 .paginate {
+    display: inline-block;
     margin-top: 40px;
     position: absolute;
     top: 0
