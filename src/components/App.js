@@ -23,11 +23,12 @@ class App extends React.Component {
     super();
     this.state = {
       cards: [],
-      searchTerm: [],
+      searchTerm: '',
       totalResults: 0,
       currentPage: 1,
       currentCard: null
     }
+
   }
 
   // const [error, setError] = useState(null);
@@ -43,20 +44,31 @@ class App extends React.Component {
 
 
 
-  useEffect(() => {
-    const fetchCards = async () => {
-      setIsLoaded(true);
-      const res = await axios.get(currentPage);
-      let next = parse(res.headers.link).next.url;
-      let last = parse(res.headers.link).last.url;
-      setPreviousPage(last);
-      setNextPage(next);
-      setCardData(res.data.cards);
-      setIsLoaded(false);
-    }
+  // useEffect(() => {
+  //   const fetchCards = async () => {
+  //     setIsLoaded(true);
+  //     const res = await axios.get(currentPage);
+  //     let next = parse(res.headers.link).next.url;
+  //     let last = parse(res.headers.link).last.url;
+  //     setPreviousPage(last);
+  //     setNextPage(next);
+  //     setCardData(res.data.cards);
+  //     setIsLoaded(false);
+  //   }
 
-    fetchCards();
-  }, [currentPage]);
+  //   fetchCards();
+  // }, [currentPage]);
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    axios.get(`https://api.magicthegathering.io/v1/cards?name=${searchTerm}`)
+         .then((res) => {
+           this.setState({
+             cards: res.data.results,
+
+           })
+         })
+  }
 
   function goToNextPage () {
     setCurrentPage(nextPage);
