@@ -1,16 +1,14 @@
 import React from 'react'
 
-function CardProfile (props) {
+const CardProfile = (props) => {
 
 
 
-const card = props.card;
+console.log(props);
 
     return (
     <li>
-    <h1 id="name">{card.name}</h1>
-    <img className="cardImg"src={card.imageUrl} />
-    <div>{card.text}</div>
+    test
     </li>
     )
 }

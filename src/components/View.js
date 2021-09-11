@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import CardProfile from './cardProfile';
 
-function View ({cardData, searchTerm}) {
+const View = (props) => {
 
  // console.log('props from view: ', cardData)
 
   return (
-    //need to fix key props
-    <>
-      <ul>{cardData.filter((val) => {
-        if (searchTerm === "") {
-          return val;
-        } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-          return val
-        }
-      }).map((c, key) => <CardProfile key={key} card={c}/>)}</ul>
-    </>
+    <div className="container">
+      <div className="row">
+        <div className="col s12">
+          <ul>
+            {
+              props.cards.map((c, key) => <CardProfile key={key} card={c} />)
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
   )
 
 

@@ -67,6 +67,13 @@ class App extends React.Component {
          })
   }
 
+  handleChange = (e) => {
+    this.setState({
+      searchTerm: e.target.value
+    })
+    console.log(`cards: ${this.state.searchTerm}`)
+  }
+
   // function goToNextPage () {
   //   setCurrentPage(nextPage);
   //   console.log(nextPage)
@@ -85,6 +92,7 @@ render() {
 
         <div>
           <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+          <View cards={this.props.cards} />
         </div>
 
     </div>
