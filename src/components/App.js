@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import endpoint from './config';
-import CardProfile from './cardProfile';
 import Search from './Search';
 import Paginate from './Paginate'
 import View from './View'
 import axios from 'axios';
-import './App.css';
 
 
 
@@ -40,7 +37,7 @@ class App extends React.Component {
   // const [previousPage, setPreviousPage] = useState('');
   // const [searchTerm, setSearchTerm] = useState('')
 
-  var parse = require('parse-link-header')
+  //var parse = require('parse-link-header')
 
 
 
@@ -70,42 +67,29 @@ class App extends React.Component {
          })
   }
 
-  function goToNextPage () {
-    setCurrentPage(nextPage);
-    console.log(nextPage)
-  }
+  // function goToNextPage () {
+  //   setCurrentPage(nextPage);
+  //   console.log(nextPage)
+  // }
 
-  function goToPreviousPage () {
-    setCurrentPage(previousPage);
-  }
-
-
-  console.log(cardData)
-  console.log(`next page: ${typeof(nextPage)}`)
-  console.log(`last page: ${previousPage}`)
+  // function goToPreviousPage () {
+  //   setCurrentPage(previousPage);
+  // }
 
 
+
+
+render() {
   return (
     <div className="app">
-      <div className="search">
-        <input type="text"
-               placeholder="Search..."
-               onChange={(e) => {
-                 setSearchTerm(e.target.value);
-               }}
-               />
-      </div>
-      <div className="view">
-      <View searchTerm={searchTerm}cardData={cardData} />
-      </div>
-      <div className="paginate" >
 
-      <Paginate goToNextPage={goToNextPage}
-        goToPreviousPage={goToPreviousPage}
-        pageIndex={pageIndex} />
-      </div>
+        <div>
+          <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+        </div>
+
     </div>
   )
+    }
 
 
 };
