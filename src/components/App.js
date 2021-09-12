@@ -58,10 +58,11 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    axios.get(`https://api.magicthegathering.io/v1/cards?name=${searchTerm}`)
+    axios.get(`https://api.magicthegathering.io/v1/cards?name=${this.state.searchTerm}`)
          .then((res) => {
+           console.log('res data: ', res.data.cards)
            this.setState({
-             cards: res.data.results,
+             cards: res.data.cards,
 
            })
          })
@@ -92,7 +93,7 @@ render() {
 
         <div>
           <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
-          <View cards={this.props.cards} />
+          <View cards={this.state.cards} />
         </div>
 
     </div>

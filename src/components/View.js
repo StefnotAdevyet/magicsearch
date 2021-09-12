@@ -3,7 +3,7 @@ import CardProfile from './cardProfile';
 
 const View = (props) => {
 
- // console.log('props from view: ', cardData)
+ console.log('props from view: ', props)
 
   return (
     <div className="container">
@@ -11,7 +11,9 @@ const View = (props) => {
         <div className="col s12">
           <ul>
             {
-              props.cards.map((c, key) => <CardProfile key={key} card={c} />)
+              props.cards.map((c, i) => {
+                return <CardProfile key={i} card={c} />
+              })
             }
           </ul>
         </div>

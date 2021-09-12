@@ -7,9 +7,14 @@ const CardProfile = (props) => {
 console.log(props);
 
     return (
-    <li>
-    test
-    </li>
+        <div className="container">
+            <div className="row">
+                <div className="col s12">
+                    <div className="name">{props.card.name}</div>
+                    <img src={props.card.imageUrl} />
+                </div>
+            </div>
+        </div>
     )
 }
 
