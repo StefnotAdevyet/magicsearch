@@ -14,7 +14,13 @@ const Paginate = (props) => {
       <div className="row">
         <ul className="paginate">
           {
+            props.currentPage > 1 ? <li className={`waves-effect `} onClick={() => props.nextPage(props.currentPage-1)}><a href="#">Prev</a></li> : ""
+          }
+          {
             pageLinks
+          }
+           {
+            props.currentPage < props.pages + 1 ? <li className={`waves-effect `} onClick={() => props.nextPage(props.currentPage+1)}><a href="#">Next</a></li> : ""
           }
         </ul>
       </div>
