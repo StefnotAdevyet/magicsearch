@@ -62,7 +62,7 @@ class App extends React.Component {
          .then((res) => {
            console.log('res data: ', res.headers["total-count"])
            this.setState({
-             cards: [...res.data.cards],
+             cards: res.data.cards,
              totalResults: res.headers["total-count"]
            })
          })
@@ -79,7 +79,7 @@ class App extends React.Component {
          .then((res) => {
            console.log('res data: ', res.headers)
            this.setState({
-             cards: [...res.data.cards],
+             cards: res.data.cards,
              currentPage: pageNumber
 
            })
