@@ -3,7 +3,7 @@ import CardProfile from './cardProfile';
 
 const View = (props) => {
 
- console.log('props from view: ', props)
+//  console.log('props from view: ', props)
 
   return (
     <div className="container">

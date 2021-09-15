@@ -60,10 +60,10 @@ class App extends React.Component {
     e.preventDefault();
     axios.get(`https://api.magicthegathering.io/v1/cards?name=${this.state.searchTerm}`)
          .then((res) => {
-           console.log('res data: ', res.data.cards)
+           console.log('res data: ', res.headers["total-count"])
            this.setState({
-             cards: res.data.cards,
-
+             cards: [...res.data.cards],
+             totalResults: res.headers["total-count"]
            })
          })
   }
@@ -72,7 +72,18 @@ class App extends React.Component {
     this.setState({
       searchTerm: e.target.value
     })
-    console.log(`cards: ${this.state.searchTerm}`)
+  }
+
+  nextPage = (pageNumber) => {
+    axios.get(`https://api.magicthegathering.io/v1/cards?name=${this.state.searchTerm}&page=${pageNumber}`)
+         .then((res) => {
+           console.log('res data: ', res.headers)
+           this.setState({
+             cards: [...res.data.cards],
+             currentPage: pageNumber
+
+           })
+         })
   }
 
   // function goToNextPage () {
@@ -88,12 +99,18 @@ class App extends React.Component {
 
 
 render() {
+  const numberPages = Math.floor(this.state.totalResults / 100);
+
   return (
     <div className="app">
 
         <div>
           <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
           <View cards={this.state.cards} />
+          {
+          this.state.totalResults > 100 ? <Paginate pages={numberPages} nextPage={this.nextPage} currentPage={this.state.currentPage}/>
+          : ""
+          }
         </div>
 
     </div>
