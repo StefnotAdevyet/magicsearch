@@ -5,6 +5,7 @@ import React from 'react';
 const CardDetails = (props) => {
   console.log(props)
 
+  const card = props.currentCard;
 
 
   return (
@@ -17,11 +18,13 @@ const CardDetails = (props) => {
       </div>
       <div className="row">
         {
-          props.currentCard.imgUrl === null ?
+          card.imgUrl === null ?
           <img src="" alt="Card image" />
           :
-          <img src={props.currentCard.imageUrl} />
+          <img src={card.imageUrl} />
         }
+        <div>{card.cmc}</div>
+        <p>{card.text}</p>
       </div>
 
     </div>
