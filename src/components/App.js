@@ -86,6 +86,21 @@ class App extends React.Component {
          })
   }
 
+  viewCardInfo = (id) => {
+    const filteredCard = this.state.cards.filter(card => card.id === id)
+
+    const newCurrentCard = filteredCard.length > 0 ? filteredCard[0] : null
+
+    this.setState({
+      currentCard: filteredCard[0]
+    })
+  }
+
+  closeCardInfo = () => {
+    this.setState({
+      currentCard: null
+    })
+ }
   // function goToNextPage () {
   //   setCurrentPage(nextPage);
   //   console.log(nextPage)
@@ -103,6 +118,11 @@ render() {
 
   return (
     <div className="app">
+      {
+
+        this.state.currentCard === null ?
+
+      }
 
         <div>
           <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
