@@ -15,6 +15,9 @@ const CardProfile = (props) => {
                        props.card.name
                    }
                 </div>
+                <div className="card-content">
+                    <p><a href="#" onClick={() => props.viewCardInfo(props.cardId)}>View More Info</a></p>
+                </div>
             </div>
         </div>
     )

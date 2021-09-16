@@ -3,6 +3,8 @@ import Search from './Search';
 import Paginate from './Paginate'
 import View from './View'
 import axios from 'axios';
+import CardDetails from './CardDetails';
+
 
 
 
@@ -121,17 +123,20 @@ render() {
       {
 
         this.state.currentCard === null ?
+          <div>
+            <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+            <View viewCardInfo={this.viewCardInfo} cards={this.state.cards} />
+          </div>
+          :
+          <CardDetails currentCard={this.state.currentCard} closeCardInfo={this.closeCardInfo} />
 
       }
 
-        <div>
-          <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
-          <View cards={this.state.cards} />
-          {
-          this.state.totalResults > 100 ? <Paginate pages={numberPages} nextPage={this.nextPage} currentPage={this.state.currentPage}/>
+      {
+        this.state.totalResults > 100 ? <Paginate pages={numberPages} nextPage={this.nextPage} currentPage={this.state.currentPage} />
           : ""
-          }
-        </div>
+      }
+
 
     </div>
   )
