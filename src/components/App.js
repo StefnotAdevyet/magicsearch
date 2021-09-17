@@ -94,7 +94,7 @@ class App extends React.Component {
     const newCurrentCard = filteredCard.length > 0 ? filteredCard[0] : null
 
     this.setState({
-      currentCard: filteredCard[0]
+      currentCard: newCurrentCard
     })
   }
 
@@ -133,7 +133,7 @@ render() {
       }
 
       {
-        this.state.totalResults > 100 ? <Paginate pages={numberPages} nextPage={this.nextPage} currentPage={this.state.currentPage} />
+        this.state.totalResults > 100 && this.state.currentCard === null ? <Paginate pages={numberPages} nextPage={this.nextPage} currentPage={this.state.currentPage} />
           : ""
       }
 
