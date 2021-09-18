@@ -8,7 +8,7 @@ const CardProfile = (props) => {
 //need to make card clickable to view card data
 
     return (
-        <div className="col s12 m6 l3">
+        <li className="container">
             <div className="card">
                 <div className="card-image waves-effect waves-block waves-light">
                    {
@@ -19,7 +19,7 @@ const CardProfile = (props) => {
                     <p><a href="#" onClick={() => props.viewCardInfo(props.cardId)}>View More Info</a></p>
                 </div>
             </div>
-        </div>
+        </li>
     )
 }
 

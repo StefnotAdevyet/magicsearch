@@ -5,7 +5,7 @@ const View = (props) => {
 
 
   return (
-    <div className="container">
+    <ul className="container">
       <div className="row">
         <div className="col s12">
           <ul>
@@ -17,7 +17,7 @@ const View = (props) => {
           </ul>
         </div>
       </div>
-    </div>
+    </ul>
   )
 
 
