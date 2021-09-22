@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode=development --open --hot",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -16,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/StefnotAdevyet/magicsearch/issues"
   },
-  "homepage": "https://github.com/StefnotAdevyet/magicsearch#readme",
+  "homepage": "https://StefnotAdevyet.github.io/magicsearch",
   "dependencies": {
     "@babel/runtime": "^7.15.3",
     "axios": "^0.21.1",

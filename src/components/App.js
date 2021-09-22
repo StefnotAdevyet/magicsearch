@@ -6,9 +6,6 @@ import axios from 'axios';
 import CardDetails from './CardDetails';
 
 
-
-
-
 //import './App.css'
 /*
 need to add the api call response to the component so it renders
