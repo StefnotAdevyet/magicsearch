@@ -5,9 +5,9 @@ const View = (props) => {
 
 
   return (
-    <ul className="container" style={{display: "flex", flexDirection: "row"}}>
-      <div className="row" >
-        <div className="col s12">
+    <ul container>
+      <div className="row"  >
+        <div >
           <ul>
             {
               props.cards.map((c, i) => {
