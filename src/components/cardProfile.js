@@ -9,14 +9,12 @@ const CardProfile = (props) => {
 
     return (
         <li className="container">
-            <div className="card">
+            <div className="card"style={{maxWidth: "240px"}}>
                 <div className="card-image waves-effect waves-block waves-light">
-                   {
-                       props.card.name
-                   }
+                   <img src={props.card.imageUrl} />
                 </div>
                 <div className="card-content">
-                    <p><a href="#" onClick={() => props.viewCardInfo(props.cardId)}>View More Info</a></p>
+                    <p><a href="#" onClick={() => props.viewCardInfo(props.cardId)}>{props.card.name}</a></p>
                 </div>
             </div>
         </li>
