@@ -7,8 +7,8 @@ const Search = (props) => {
 
     return (
       <div className="container">
-        <div className="row">
-          <section className="col s4 offset-4">
+        <div className="row search">
+          <section>
             <form action="" onSubmit={props.handleSubmit}>
               <div className="input-field">
                 <input placeholder="Search Card" type="text" onChange={props.handleChange}/>

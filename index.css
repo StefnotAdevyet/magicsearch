@@ -7,12 +7,16 @@ h1 {
 }
 
 .heading {
-    background: chartreuse;
     text-align: center;
     font-size: 24px;
+    color: grey;
+    margin-top: 25%;
 }
 
-
+.search {
+    display: flex;
+    justify-content: center;
+}
 
 .view {
 
