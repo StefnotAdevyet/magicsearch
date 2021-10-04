@@ -5,19 +5,21 @@ const View = (props) => {
 
 
   return (
-    <ul container>
-      <div className="row"  >
-        <div >
-          <ul>
-            {
-              props.cards.map((c, i) => {
-                return <CardProfile key={i} card={c} viewCardInfo={props.viewCardInfo} cardId={c.id} />
-              })
-            }
-          </ul>
+
+    <div className="container">
+      <div className="card-grid">
+
+        <div className="inner-card-grid">
+          {
+            props.cards.map((c, i) => {
+              return <CardProfile key={i} card={c} viewCardInfo={props.viewCardInfo} cardId={c.id} />
+            })
+          }
         </div>
+
       </div>
-    </ul>
+    </div>
+
   )
 
 

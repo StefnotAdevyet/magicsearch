@@ -18,6 +18,12 @@ h1 {
     justify-content: center;
 }
 
+.card-grid {
+    display: block;
+    padding: 0 2.5%;
+    margin: 20px 15px;
+}
+
 .view {
 
     margin-top: 60px;
