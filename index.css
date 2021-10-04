@@ -6,6 +6,14 @@ h1 {
     font-size: 14px;
 }
 
+.heading {
+    background: chartreuse;
+    text-align: center;
+    font-size: 24px;
+}
+
+
+
 .view {
 
     margin-top: 60px;

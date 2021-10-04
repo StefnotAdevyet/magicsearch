@@ -121,10 +121,10 @@ render() {
 
         this.state.currentCard === null ?
           <div>
-            <div className="#283593 indigo darken-3 center">
+            <h1 className="heading">
             MagicSearch
 
-            </div>
+            </h1>
 
             <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
             <View viewCardInfo={this.viewCardInfo} cards={this.state.cards} />
