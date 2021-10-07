@@ -16,23 +16,31 @@ const CardDetails = (props) => {
         <span style={{ marginLeft: 10 }}>Go Back</span>
 
       </div>
-      <div className="row">
-        <div className="col s12 m4">
-          {
-            card.imgUrl === null ?
-              <img src="" alt="Card image" />
-              :
-              <img src={card.imageUrl} />
-          }
-        </div>
 
-        <div className="col s12 m8">
-          <div className="info-container">
-            <p>{card.cmc}</p>
-            <p>{card.text}</p>
-          </div>
-        </div>
+      <div className="card-details">
+        <img src={card.imageUrl} />
+
+
+      <table>
+        <thead>
+          <tr>
+            <th>{card.name}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{card.type}</td>
+          </tr>
+          <tr>
+            <td>{card.text}</td>
+          </tr>
+        </tbody>
+      </table>
       </div>
+
+
+
+
 
     </div>
 

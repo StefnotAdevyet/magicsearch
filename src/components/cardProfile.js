@@ -8,10 +8,10 @@ const CardProfile = (props) => {
 //need to make card clickable to view card data
 
     return (
-        <div className="container" style={{display: "inline-block", maxWidth: "240px", margin: "5px", justifyContent: "center"}}>
+        <div className="card-container">
             <div className="card">
-                <div className="card-image waves-effect waves-block waves-light">
-                   <img src={props.card.imageUrl} style={{maxWidth: "240px"}} onClick={() => props.viewCardInfo(props.cardId)} alt="not found"/>
+                <div className="card-image">
+                   <img src={props.card.imageUrl ? props.card.imageUrl : 'src/imgNotFound.jpg'} onClick={() => props.viewCardInfo(props.cardId)} alt="not found"/>
                 </div>
                 <div className="card-content">
                     <p><a href="#" onClick={() => props.viewCardInfo(props.cardId)}>{props.card.name}</a></p>
