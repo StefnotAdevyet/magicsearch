@@ -6,11 +6,6 @@ import axios from 'axios';
 import CardDetails from './CardDetails';
 
 
-//import './App.css'
-/*
-need to add the api call response to the component so it renders
-the first item in the response data when the app start up
-*/
 
 
 class App extends React.Component {
@@ -27,33 +22,9 @@ class App extends React.Component {
 
   }
 
-  // const [error, setError] = useState(null);
-  // const [isLoaded, setIsLoaded] = useState(false);
-  // const [cardData, setCardData] = useState([]);
-  // const [currentPage, setCurrentPage] = useState(endpoint);
-  // const [pageIndex, setPageIndex] = useState(1)
-  // const [nextPage, setNextPage] = useState('');
-  // const [previousPage, setPreviousPage] = useState('');
-  // const [searchTerm, setSearchTerm] = useState('')
-
-  //var parse = require('parse-link-header')
 
 
 
-  // useEffect(() => {
-  //   const fetchCards = async () => {
-  //     setIsLoaded(true);
-  //     const res = await axios.get(currentPage);
-  //     let next = parse(res.headers.link).next.url;
-  //     let last = parse(res.headers.link).last.url;
-  //     setPreviousPage(last);
-  //     setNextPage(next);
-  //     setCardData(res.data.cards);
-  //     setIsLoaded(false);
-  //   }
-
-  //   fetchCards();
-  // }, [currentPage]);
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -100,14 +71,6 @@ class App extends React.Component {
       currentCard: null
     })
  }
-  // function goToNextPage () {
-  //   setCurrentPage(nextPage);
-  //   console.log(nextPage)
-  // }
-
-  // function goToPreviousPage () {
-  //   setCurrentPage(previousPage);
-  // }
 
 
 

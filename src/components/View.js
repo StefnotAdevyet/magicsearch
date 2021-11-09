@@ -7,9 +7,9 @@ const View = (props) => {
   return (
 
     <div className="container">
-      <div className="card-grid">
 
-        <div className="inner-card-grid">
+
+        <div className="card-grid">
           {
             props.cards.map((c, i) => {
               return <CardProfile key={i} card={c} viewCardInfo={props.viewCardInfo} cardId={c.id} />
@@ -18,7 +18,7 @@ const View = (props) => {
         </div>
 
       </div>
-    </div>
+
 
   )
 
